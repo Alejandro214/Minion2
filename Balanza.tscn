@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Plataforma.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Punto_fijo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Balanza.gd" type="Script" id=3]
+[ext_resource path="res://GrooveJoint2D.gd" type="Script" id=4]
+[ext_resource path="res://minion-2020s2-fisica-2d-master/cadena.png" type="Texture" id=5]
+[ext_resource path="res://Plataforma2.gd" type="Script" id=8]
+
+[node name="Balanza" type="Node2D"]
+position = Vector2( 44.0522, 17.7821 )
+script = ExtResource( 3 )
+
+[node name="Punto_fijo" parent="." instance=ExtResource( 2 )]
+position = Vector2( 149.84, 83.889 )
+
+[node name="Punto_fijo2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 383.956, 81.7216 )
+
+[node name="Plataforma" parent="." instance=ExtResource( 1 )]
+position = Vector2( 149.476, 176.116 )
+
+[node name="Plataforma2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384.508, 177.785 )
+script = ExtResource( 8 )
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+position = Vector2( 149.613, 88.0256 )
+scale = Vector2( 1, 1.56 )
+node_a = NodePath("../Punto_fijo")
+node_b = NodePath("../Plataforma")
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="GrooveJoint2D"]
+position = Vector2( 0.793701, 30.0182 )
+scale = Vector2( 1, 0.358976 )
+texture = ExtResource( 5 )
+
+[node name="GrooveJoint2D2" type="GrooveJoint2D" parent="."]
+position = Vector2( 384.675, 79.8932 )
+scale = Vector2( 1, 1.76 )
+node_a = NodePath("../Punto_fijo2")
+node_b = NodePath("../Plataforma2")
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="GrooveJoint2D2"]
+position = Vector2( 0, 38.7056 )
+scale = Vector2( 1, 0.327336 )
+texture = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 273.642, 83.4275 )
+rotation = -1.5681
+texture = ExtResource( 5 )

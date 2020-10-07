@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Grounp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://minion-2020s2-fisica-2d-master/piso2.png" type="Texture" id=3]
+[ext_resource path="res://Pentagono.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Balanza.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cajita.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nivel 2.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.1409, 308.848 )
+
+[node name="Nivel 1" type="Node2D"]
+position = Vector2( 7.84351, -5.204 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 106.183, 327.846 )
+
+[node name="Grounp" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291.792, 488.213 )
+
+[node name="Grounp2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 851.669, 490.016 )
+scale = Vector2( 0.717086, 0.995113 )
+
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2( 22.9389, 343.031 )
+
+[node name="Sprite" type="Sprite" parent="Pared"]
+position = Vector2( 2.86707, -25.2196 )
+scale = Vector2( 0.649884, 6.60725 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2( 4, -23.8382 )
+shape = SubResource( 1 )
+
+[node name="Cajita" parent="." instance=ExtResource( 6 )]
+position = Vector2( 109.658, 264.269 )
+
+[node name="Pentagono" parent="." instance=ExtResource( 4 )]
+position = Vector2( 960.803, 292.214 )
+level_2 = ExtResource( 7 )
+
+[node name="Balanza" parent="." instance=ExtResource( 5 )]
+position = Vector2( 313.39, 88.8918 )

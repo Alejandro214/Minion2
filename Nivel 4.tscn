@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Grounp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Balanza.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cajita.tscn" type="PackedScene" id=4]
+
+[node name="Nivel 4" type="Node2D"]
+position = Vector2( -4.00452, -5.33936 )
+
+[node name="Grounp" parent="." instance=ExtResource( 1 )]
+position = Vector2( 238.843, 459.873 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 51.4142, 251.179 )
+
+[node name="Balanza" parent="." instance=ExtResource( 3 )]
+position = Vector2( 559.351, 71.4506 )
+rotation = -0.0120056
+
+[node name="Cajita" parent="." instance=ExtResource( 4 )]
+position = Vector2( 322.441, 251.73 )

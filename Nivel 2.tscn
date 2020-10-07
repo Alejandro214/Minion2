@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Grounp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pentagono.tscn" type="PackedScene" id=3]
+[ext_resource path="res://minion-2020s2-fisica-2d-master/piso2.png" type="Texture" id=4]
+[ext_resource path="res://minion-2020s2-fisica-2d-master/trampa.png" type="Texture" id=5]
+[ext_resource path="res://Cajita.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nivel 3.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47.3054, 50.2239 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.70432, 139.848 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 254.693, 17.6638 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.4536, 46.7404 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 17.5034, 61.9679 )
+
+[node name="Nivel 2" type="Node2D"]
+
+[node name="Grounp" parent="." instance=ExtResource( 1 )]
+position = Vector2( 563.426, 433.044 )
+scale = Vector2( 1.96734, 1.17241 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 649.199, 247.506 )
+
+[node name="Pentagono" parent="." instance=ExtResource( 3 )]
+position = Vector2( 977.595, 215.339 )
+level_3 = ExtResource( 8 )
+
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2( 42.9986, 266.316 )
+scale = Vector2( 1.20024, 6.94279 )
+
+[node name="Sprite" type="Sprite" parent="Pared"]
+position = Vector2( 6.72717, 8.40897 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2( 6.74644, 11.1118 )
+shape = SubResource( 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 73.103, 25.4271 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 432.01, 112.133 )
+rotation = -3.14069
+scale = Vector2( 0.630444, 0.643295 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 461.961, 112.435 )
+scale = Vector2( 1.79973, 0.660305 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 432.261, 127.35 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 669.669, 190.753 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 194.808, 49.1439 )
+shape = SubResource( 5 )
+
+[node name="Cajita" parent="." instance=ExtResource( 6 )]
+position = Vector2( 567.979, 117.182 )
+
+[node name="Cajita2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 601.35, 116.514 )
+
+[node name="Cajita3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 634.054, 117.849 )
+
+[node name="Cajita4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 667.425, 116.514 )
+
+[node name="Cajita5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 699.461, 117.182 )
+
+[node name="Cajita6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 473.206, 240.654 )
